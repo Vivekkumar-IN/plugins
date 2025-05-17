@@ -2,7 +2,7 @@ import os, sys, importlib, logging
 
 HANDLERS: list = []
 HELP = {}
-base_dir = os.getcwd()
+base_dir = os.path.dirname(os.path.abspath(__file__))
 
 for root, _, files in os.walk(base_dir):
   for file in files:
