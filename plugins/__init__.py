@@ -1,4 +1,4 @@
-from plugins.modules import HANDLERS, HELP
+from plugins.modules import handlers
 
 def setup(
     app: "Yukkibot",  # https://github.com/TheTeamVivek/YukkiMusic/blob/master/YukkiMusic/corebot.py
@@ -7,7 +7,8 @@ def setup(
     config,  # https://github.com/TheTeamVivek/YukkiMusic/tree/master/config
     helpable: dict,  # https://github.com/TheTeamVivek/YukkiMusic/blob/master/YukkiMusic/__init__.py#L38 HELPABLE
 ):
-    for h, group in HANDLERS:
+    handlers, help = handlers()
+    for h, group in handlers:
       app.add_handler(h, group)
-    helpable.update(HELP)
+    helpable.update(help)
     return len(HANDLERS)
