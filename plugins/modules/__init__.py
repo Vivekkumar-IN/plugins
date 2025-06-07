@@ -19,5 +19,3 @@ def handlers():
           if hasattr(mod, "__help__"):
             help[mod.__mod__.lower()] = mod
   return hlist, help
-  
-HANDLERS, HELP = handlers()
