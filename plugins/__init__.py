@@ -8,10 +8,3 @@ def setup(ctx: "LoaderContext"):
     For details, see the LoaderContext class in YukkiMusic core modules:
     https://github.com/TheTeamVivek/YukkiMusic/tree/master/YukkiMusic/core/modules.py
     """
-
-    handlers, help = handlers()
-    for h, group in handlers:
-      app.add_handler(h, group)
-    helpable.update(help)
-    db = mongo_client.Yukki # Do what ever that you want to do with "db" a Async MongoClient 
-    return len(HANDLERS)
